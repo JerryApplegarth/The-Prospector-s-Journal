@@ -7,9 +7,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun GoldPrices() {
+fun GoldPrices(navController: NavController) {
 	Column(
 		modifier = Modifier
 			.fillMaxWidth(),

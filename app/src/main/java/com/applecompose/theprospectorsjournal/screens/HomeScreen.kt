@@ -14,12 +14,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.R
 import com.applecompose.theprospectorsjournal.conposables.AppLogo
 import com.applecompose.theprospectorsjournal.conposables.ImageCard
+import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
-fun MainScreen() {
+fun HomeScreen(navController: NavController) {
 	Column(
 		modifier = Modifier
 			.fillMaxWidth()
@@ -49,6 +51,8 @@ fun MainScreen() {
 				fontFamily = FontFamily.Monospace,
 				modifier = Modifier
 					.clickable {
+						navController.navigate(Screen.NoteScreen.route)
+
 
 					}
 				)
@@ -61,6 +65,7 @@ fun MainScreen() {
 				fontFamily = FontFamily.Monospace,
 				modifier = Modifier
 					.clickable {
+						navController.navigate(Screen.GoldPrices.route)
 
 					}
 			)
