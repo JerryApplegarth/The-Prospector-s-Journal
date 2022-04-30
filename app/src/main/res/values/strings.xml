@@ -2,4 +2,15 @@
     <string name="app_name">The Prospectors Journal</string>
     <string name="prospectors_notes">Click the Prospector\'s Notes above to save information on your prospects</string>
     <string name="gold_prices">Click on the Gold Prices above to get the latest updates</string>
+
+
+        <string name="apple_apps">"Applegarth's Apps"</string>
+        <string name="help_support_us">Help Support Us</string>
+
+        <string name="buy_me_coffee">"Buy me a Coffee "</string>
+        <string name="http_address"> "https://www.buymeacoffee.com/JerryApplegarth "</string>
+        <string name="apple_logo">"Apple Logo"</string>
+
+
+
 </resources>
