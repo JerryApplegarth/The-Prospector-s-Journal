@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 fun GoldPrices() {
 	Column(
 		modifier = Modifier
-			.fillMaxSize(),
+			.fillMaxWidth(),
 		horizontalAlignment = Alignment.CenterHorizontally,
 		verticalArrangement = Arrangement.Top
 	)
@@ -36,6 +36,7 @@ fun GoldPrices() {
 			Text(text = "Save")
 
 		}
+
 
 	}
 }
