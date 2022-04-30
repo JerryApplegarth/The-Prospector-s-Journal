@@ -24,25 +24,28 @@ fun ImageCard(
 	modifier: Modifier = Modifier
 ) {
 	Column(
-		modifier = Modifier.fillMaxSize(),
-		verticalArrangement = Arrangement.Center,
+		modifier = Modifier.fillMaxWidth(),
+		verticalArrangement = Arrangement.Top,
 		horizontalAlignment = Alignment.CenterHorizontally
 	) {
 		Card(
-			modifier = modifier.fillMaxWidth(),
+			modifier = modifier
+				.fillMaxWidth()
+				.padding(start = 16.dp, end = 16.dp),
 			shape = RoundedCornerShape(36.dp),
 			elevation = 6.dp,
 
 			) {
 			Box(
 				modifier = Modifier
-					.height(300.dp)
+					.height(250.dp)
+
 
 
 			) {
 				Image(
 					modifier = Modifier
-						.fillMaxSize(),
+						.fillMaxWidth(),
 					painter = painter,
 					contentDescription = contentDescription,
 					contentScale = ContentScale.Crop
@@ -78,7 +81,7 @@ fun ImageCard(
 			}
 
 		}
-		AppLogo()
+
 	}
 }
 
