@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
 fun GoldPrices(navController: NavController) {
@@ -19,13 +20,7 @@ fun GoldPrices(navController: NavController) {
 	)
 
 	{
-		TopAppBar(modifier = Modifier.fillMaxWidth()) {
-			Text(
-				text = "Top App Bar",
-				fontSize = 16.sp
-			)
 
-		}
 		Text(
 			text = "Gold Prices",
 			fontSize = 24.sp,
@@ -33,11 +28,13 @@ fun GoldPrices(navController: NavController) {
 		Spacer(modifier = Modifier.height(16.dp))
 		Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
 		Button(
-			onClick = { }) {
-			Text(text = "Save")
+			onClick = {
+				navController.navigate(route = Screen.HomeScreen.route)
+			}) {
+			Text(text = "Home")
 
 		}
-
-
 	}
+
+
 }
