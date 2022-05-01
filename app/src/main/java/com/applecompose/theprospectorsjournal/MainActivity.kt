@@ -27,8 +27,7 @@ class MainActivity : ComponentActivity() {
 					modifier = Modifier.fillMaxSize(),
 					color = MaterialTheme.colors.background
 				) {
-					val context = LocalContext.current
-					HomeScreen(navController = NavController(context))
+					Navigation()
 
 				}
 			}
