@@ -1,5 +1,6 @@
 package com.applecompose.theprospectorsjournal.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -8,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
 fun NoteScreen(navController: NavController) {
@@ -21,16 +23,39 @@ fun NoteScreen(navController: NavController) {
 			{
 
 				Text(
-					text = "Gold Prices",
+					text = "Prospect's Notes",
 					fontSize = 24.sp,
 					)
 				Spacer(modifier = Modifier.height(16.dp))
 				Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
-				Button(
-					onClick = {  }) {
-					Text(text = "Save")
+				Spacer(modifier = Modifier.height(8.dp))
+				Row(
+					modifier = Modifier.padding(8.dp)
+				) {
+					Button(
+						onClick = {
+							navController.navigate(route = Screen.HomeScreen.route)
+						}) {
+						Text(text = "Home")
+
+					}
+					Spacer(modifier = Modifier.width(16.dp))
+					Button(
+						onClick = {
+							navController.navigate(route = Screen.GoldPrices.route)
+
+						}) {
+						Text(
+							text = "Gold Prices",
+							modifier = Modifier
+								.padding(4.dp)
+
+							)
+				}
+
 
 				}
+
 
 			}
 }
