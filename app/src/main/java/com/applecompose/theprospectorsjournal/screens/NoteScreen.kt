@@ -23,11 +23,18 @@ fun NoteScreen(navController: NavController) {
 			{
 
 				Text(
-					text = "Prospect's Notes",
+					text = "Prospect's Notes...",
 					fontSize = 24.sp,
 					)
+				Text(
+					text = "...make detail notes of your discoveries",
+					fontSize = 16.sp,
+				)
 				Spacer(modifier = Modifier.height(16.dp))
 				Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
+				Text(text = "This area will be used for the detail note section")
+
+
 				Spacer(modifier = Modifier.height(8.dp))
 				Row(
 					modifier = Modifier.padding(8.dp)
@@ -48,7 +55,7 @@ fun NoteScreen(navController: NavController) {
 						Text(
 							text = "Gold Prices",
 							modifier = Modifier
-								.padding(4.dp)
+
 
 							)
 				}
