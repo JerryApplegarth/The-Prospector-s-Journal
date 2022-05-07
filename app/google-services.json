@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "534038796181",
+    "project_id": "the-prospectors-journal",
+    "storage_bucket": "the-prospectors-journal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534038796181:android:be935f997268e46b85c89c",
+        "android_client_info": {
+          "package_name": "com.applecompose.therecord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534038796181-n1e6fnfssjiuekhv6csss7cqpujbt1mm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6dzTwE0djdNprK8uHllI8FkBOzWI9h1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534038796181-n1e6fnfssjiuekhv6csss7cqpujbt1mm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
