@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
-fun NoteScreen(navController: NavController) {
+fun JournalScreen(navController: NavController) {
 	Column(
 				modifier = Modifier
 					.fillMaxSize(),
@@ -32,6 +32,7 @@ fun NoteScreen(navController: NavController) {
 				)
 				Spacer(modifier = Modifier.height(16.dp))
 				Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
+
 				Text(text = "This area will be used for the detail note section")
 
 

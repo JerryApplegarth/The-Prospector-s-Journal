@@ -51,7 +51,7 @@ fun HomeScreen(navController: NavController) {
 				fontFamily = FontFamily.Monospace,
 				modifier = Modifier
 					.clickable {
-						navController.navigate(Screen.NoteScreen.route)
+						navController.navigate(Screen.JournalScreen.route)
 
 
 					}
