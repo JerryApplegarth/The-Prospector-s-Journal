@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.applecompose.theprospectorsjournal.conposables.JournalTopTitle
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
@@ -19,17 +20,9 @@ fun JournalScreen(navController: NavController) {
 				horizontalAlignment = Alignment.CenterHorizontally,
 				verticalArrangement = Arrangement.Top
 				)
-
 			{
 
-				Text(
-					text = "Prospect's Notes...",
-					fontSize = 24.sp,
-					)
-				Text(
-					text = "...make detail notes of your discoveries",
-					fontSize = 16.sp,
-				)
+				JournalTopTitle()
 				Spacer(modifier = Modifier.height(16.dp))
 				Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
 
