@@ -1,8 +1,11 @@
 package com.applecompose.theprospectorsjournal.conposables
 
 
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -36,10 +39,13 @@ fun JournalRow(
 		elevation = 6.dp
 	) {
 		val openDialog = remember { mutableStateOf(false) }
+		val scrollState = rememberScrollState()
 		Column(
 			modifier
 				.padding(4.dp)
 				.padding(horizontal = 14.dp, vertical = 6.dp)
+				.verticalScroll(scrollState)
+
 		) {
 			Text(
 				text = journal.title,

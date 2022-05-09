@@ -1,6 +1,5 @@
 package com.applecompose.theprospectorsjournal.repository
 
-import android.provider.ContactsContract
 import com.applecompose.theprospectorsjournal.data.JournalDatabaseDao
 import com.applecompose.theprospectorsjournal.model.Journal
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +13,7 @@ class JournalRepository @Inject constructor(
 ) {
 	suspend fun addJournal(journal: Journal) = journalDatabaseDao.insert(journal)
 	suspend fun updateJournal(journal: Journal) = journalDatabaseDao.update(journal)
-	suspend fun deleteJournal(journal: Journal) = journalDatabaseDao.deleteNote(journal)
+	suspend fun deleteJournal(journal: Journal) = journalDatabaseDao.deleteJournal(journal)
 	suspend fun deleteAllJournal() = journalDatabaseDao.deleteAll()
 
 	fun getAllJournals(): Flow<List<Journal>> =
