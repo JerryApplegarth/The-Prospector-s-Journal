@@ -35,10 +35,11 @@ fun Navigation() {
 		}
 		composable(route = Screen.JournalScreen.route) {
 			val journalList = JournalApp(navController = navController)
-			JournalScreen(navController = navController,
-
-			onAddJournal = {},
-			onRemoveJournal = {}
+			JournalScreen(
+				navController = navController,
+				journal = ,
+				onAddJournal = {},
+				onRemoveJournal = {}
 			)
 		}
 	}
