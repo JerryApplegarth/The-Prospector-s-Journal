@@ -1,6 +1,7 @@
 package com.applecompose.theprospectorsjournal.screens
 
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -16,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.conposables.JournalButton
 import com.applecompose.theprospectorsjournal.conposables.JournalInputText
@@ -25,6 +27,20 @@ import com.applecompose.theprospectorsjournal.model.Journal
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 
+
+@Composable
+fun NotesApp(journalViewModel: JournalViewModel, navController: NavController) {
+	val journalViewModel = viewModel<JournalViewModel>()
+	val journalList = journalViewModel.journalList.collectAsState().value
+	JournalScreen(
+		navController = navController,
+		journal = journalList,
+		onAddJournal = { journalViewModel.addJournal(it) },
+		onRemoveJournal = { journalViewModel.removeJournal(it) })
+}
+
+
+
 @Composable
 fun JournalScreen(
 	navController: NavController,
@@ -32,6 +48,13 @@ fun JournalScreen(
 	onAddJournal: (Journal) -> Unit,
 	onRemoveJournal: (Journal) -> Unit
 ) {
+
+
+
+
+
+
+
 	var title by remember { mutableStateOf("") }
 	var location by remember { mutableStateOf("") }
 	var ownership by remember { mutableStateOf("") }
@@ -41,8 +64,8 @@ fun JournalScreen(
 	val focusManager = LocalFocusManager.current
 
 
-	val scrollState = rememberScrollState()
 
+	val scrollState = rememberScrollState()
 
 	Column(
 		modifier = Modifier
@@ -145,17 +168,20 @@ fun JournalScreen(
 				}
 
 
+			}
+
 
 		}
 
 
-		}
+
+
 	}
 
 
 	Divider(modifier = Modifier.padding(10.dp))
-	LazyColumn{
-		items(journal) {journal ->
+	LazyColumn {
+		items(journal) { journal ->
 			JournalRow(
 				journal = journal,
 				onNoteClick = {
