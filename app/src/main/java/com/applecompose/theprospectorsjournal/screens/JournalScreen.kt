@@ -12,12 +12,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.conposables.JournalButton
 import com.applecompose.theprospectorsjournal.conposables.JournalInputText
@@ -25,8 +23,6 @@ import com.applecompose.theprospectorsjournal.conposables.JournalRow
 import com.applecompose.theprospectorsjournal.conposables.JournalTopTitle
 import com.applecompose.theprospectorsjournal.model.Journal
 import com.applecompose.theprospectorsjournal.navigation.Screen
-
-
 
 
 @Composable
@@ -59,12 +55,9 @@ fun JournalScreen(
 		if (scrollState.isScrollInProgress) {
 			Text("scrolling")
 		}
-
-
 		JournalTopTitle()
 		Spacer(modifier = Modifier.height(16.dp))
 		Divider(thickness = 2.dp, color = MaterialTheme.colors.primaryVariant)
-
 		JournalInputText(
 			modifier = Modifier
 				.padding(top = 9.dp, bottom = 8.dp),
@@ -98,8 +91,13 @@ fun JournalScreen(
 				comments = it
 			})
 		Spacer(modifier = Modifier.height(6.dp))
-		Row() {
+		Row(
+			modifier = Modifier
+				.padding(6.dp),
+			horizontalArrangement = Arrangement.SpaceEvenly,
+			verticalAlignment = Alignment.CenterVertically
 
+		) {
 			JournalButton(
 				text = "Save",
 				onClick = {
@@ -123,7 +121,6 @@ fun JournalScreen(
 						Toast.makeText(context, "Note Added", Toast.LENGTH_SHORT).show()
 					}
 				})
-
 			Spacer(modifier = Modifier.height(8.dp))
 			Row(
 				modifier = Modifier.padding(8.dp)
