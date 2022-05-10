@@ -8,10 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -45,7 +47,7 @@ fun HomeScreen(navController: NavController) {
 			Divider(thickness = 2.dp, color = Color.Black)
 			Spacer(modifier = Modifier.height(12.dp))
 			Text(
-				text = "Prospector's Notes:",
+				text = "Prospector's Journal:",
 				fontSize = 24.sp,
 				fontWeight = FontWeight.Bold,
 				fontFamily = FontFamily.Monospace,
@@ -78,4 +80,11 @@ fun HomeScreen(navController: NavController) {
 
 	}
 
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+	val current = LocalContext.current
+	HomeScreen(navController = NavController(current))
 }

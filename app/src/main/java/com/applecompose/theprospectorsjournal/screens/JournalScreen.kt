@@ -26,17 +26,6 @@ import com.applecompose.theprospectorsjournal.conposables.JournalTopTitle
 import com.applecompose.theprospectorsjournal.model.Journal
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
-@OptIn(ExperimentalComposeUiApi::class)
-@Composable
-fun JournalApp( navController: NavController, journalViewModel: JournalViewModel = viewModel()) {
-	val journalList = journalViewModel.journalList.collectAsState().value
-
-	JournalScreen(journal = journalList,
-	onRemoveJournal = { journalViewModel.removeJournal(it) },
-	onAddJournal = { journalViewModel.addJournal(it) }, navController = navController)
-
-}
-
 
 
 
@@ -109,54 +98,64 @@ fun JournalScreen(
 				comments = it
 			})
 		Spacer(modifier = Modifier.height(6.dp))
-		JournalButton(
-			text = "Save",
-			onClick = {
-				if (title.isNotEmpty()
-					&& location.isNotEmpty()
-					&& ownership.isNotEmpty()
-					&& comments.isNotEmpty()
-				) {
-					onAddJournal(
-						Journal(
-							title = title,
-							location = location,
-							ownership = ownership,
-							comments = comments
+		Row() {
+
+			JournalButton(
+				text = "Save",
+				onClick = {
+					if (title.isNotEmpty()
+						&& location.isNotEmpty()
+						&& ownership.isNotEmpty()
+						&& comments.isNotEmpty()
+					) {
+						onAddJournal(
+							Journal(
+								title = title,
+								location = location,
+								ownership = ownership,
+								comments = comments
+							)
 						)
-					)
-					title = ""
-					location = ""
-					ownership = ""
-					comments = ""
-					Toast.makeText(context, "Note Added", Toast.LENGTH_SHORT).show()
+						title = ""
+						location = ""
+						ownership = ""
+						comments = ""
+						Toast.makeText(context, "Note Added", Toast.LENGTH_SHORT).show()
+					}
+				})
+
+			Spacer(modifier = Modifier.height(8.dp))
+			Row(
+				modifier = Modifier.padding(8.dp)
+			) {
+				Button(
+					onClick = {
+						navController.navigate(route = Screen.HomeScreen.route)
+					}) {
+					Text(text = "Home")
+
 				}
-			})
-	}
+				Spacer(modifier = Modifier.width(16.dp))
+				Button(
+					onClick = {
+						navController.navigate(route = Screen.GoldPrices.route)
 
-	Spacer(modifier = Modifier.height(8.dp))
-	Row(
-		modifier = Modifier.padding(8.dp)
-	) {
-		Button(
-			onClick = {
-				navController.navigate(route = Screen.HomeScreen.route)
-			}) {
-			Text(text = "Home")
+					}) {
+					Text(
+						text = "Gold Prices",
+						modifier = Modifier
+					)
+				}
+
+
 
 		}
-		Spacer(modifier = Modifier.width(16.dp))
-		Button(
-			onClick = {
-				navController.navigate(route = Screen.GoldPrices.route)
 
-			}) {
-			Text(
-				text = "Gold Prices",
-				modifier = Modifier
-			)
+
 		}
 	}
+
+
 	Divider(modifier = Modifier.padding(10.dp))
 	LazyColumn{
 		items(journal) {journal ->

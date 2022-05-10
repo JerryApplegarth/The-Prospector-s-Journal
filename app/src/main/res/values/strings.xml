@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">The Prospectors Journal</string>
-    <string name="prospectors_notes">Click the Prospector\'s Notes above to save information on your prospects</string>
+    <string name="prospectors_notes">Click the Prospector\'s Journal above to save information on your prospects</string>
     <string name="gold_prices">Click on the Gold Prices above to get the latest updates</string>
 
 
