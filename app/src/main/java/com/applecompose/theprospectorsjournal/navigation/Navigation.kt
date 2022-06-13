@@ -37,21 +37,5 @@ fun Navigation() {
 			GoldPrices(navController = navController)
 		}
 
-
-
-
-
-
-
-//		composable(route = Screen.JournalScreen.route) {
-//			JournalScreen(
-//				navController = navController,
-//				journal = ,
-//				onAddJournal = {},
-//				onRemoveJournal = {}
-//			)
-//
-//
-//		}
 	}
 }
