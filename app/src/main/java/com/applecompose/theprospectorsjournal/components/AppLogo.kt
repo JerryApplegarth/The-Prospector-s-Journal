@@ -1,4 +1,4 @@
-package com.applecompose.theprospectorsjournal.conposables
+package com.applecompose.theprospectorsjournal.components
 
 
 

@@ -1,4 +1,4 @@
-package com.applecompose.theprospectorsjournal.conposables
+package com.applecompose.theprospectorsjournal.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme

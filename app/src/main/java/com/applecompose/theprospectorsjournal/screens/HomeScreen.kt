@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.R
-import com.applecompose.theprospectorsjournal.conposables.AppLogo
-import com.applecompose.theprospectorsjournal.conposables.ImageCard
+import com.applecompose.theprospectorsjournal.components.AppLogo
+import com.applecompose.theprospectorsjournal.components.ImageCard
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable

@@ -1,4 +1,4 @@
-package com.applecompose.theprospectorsjournal.conposables
+package com.applecompose.theprospectorsjournal.components
 
 import androidx.compose.material.Button
 import androidx.compose.material.Text

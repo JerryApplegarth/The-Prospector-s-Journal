@@ -1,4 +1,4 @@
-package com.applecompose.theprospectorsjournal.conposables
+package com.applecompose.theprospectorsjournal.components
 
 
 import androidx.compose.foundation.layout.Column
@@ -18,6 +18,7 @@ fun AlertDialogBox() {
 	MaterialTheme {
 		Column {
 			val openDialog = remember { mutableStateOf(false)  }
+			val removeDialog = remember { mutableStateOf(true) }
 
 			Button(onClick = {
 				openDialog.value = true
@@ -43,8 +44,9 @@ fun AlertDialogBox() {
 
 							onClick = {
 								openDialog.value = false
+
 							}) {
-							Text("Confirm")
+							Text("Delete")
 						}
 					},
 					dismissButton = {

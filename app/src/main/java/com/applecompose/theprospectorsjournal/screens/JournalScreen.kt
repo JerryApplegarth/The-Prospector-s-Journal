@@ -1,7 +1,6 @@
 package com.applecompose.theprospectorsjournal.screens
 
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,19 +18,18 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.applecompose.theprospectorsjournal.conposables.JournalButton
-import com.applecompose.theprospectorsjournal.conposables.JournalInputText
-import com.applecompose.theprospectorsjournal.conposables.JournalRow
-import com.applecompose.theprospectorsjournal.conposables.JournalTopTitle
+import com.applecompose.theprospectorsjournal.components.JournalButton
+import com.applecompose.theprospectorsjournal.components.JournalInputText
+import com.applecompose.theprospectorsjournal.components.JournalRow
+import com.applecompose.theprospectorsjournal.components.JournalTopTitle
 import com.applecompose.theprospectorsjournal.model.Journal
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 
-
 @Composable
-fun NotesApp(journalViewModel: JournalViewModel, navController: NavController) {
-	val journalViewModel = viewModel<JournalViewModel>()
-	val journalList = journalViewModel.journalList.collectAsState().value
+fun JournalApp(journalViewModel: JournalViewModel, navController: NavController) {
+	val journalViewModels = viewModel<JournalViewModel>()
+	val journalList = journalViewModels.journalList.collectAsState().value
 	JournalScreen(
 		navController = navController,
 		journal = journalList,
@@ -48,6 +46,7 @@ fun JournalScreen(
 	onAddJournal: (Journal) -> Unit,
 	onRemoveJournal: (Journal) -> Unit
 ) {
+
 
 
 

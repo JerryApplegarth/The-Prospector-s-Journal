@@ -1,7 +1,6 @@
-package com.applecompose.theprospectorsjournal.conposables
+package com.applecompose.theprospectorsjournal.components
 
 
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,10 +11,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.applecompose.theprospectorsjournal.model.Journal
 import com.applecompose.theprospectorsjournal.ui.theme.newBackgroundColor
 import com.applecompose.theprospectorsjournal.utils.formatDate
+import java.util.*
 
 @Composable
 fun JournalRow(
@@ -76,9 +77,9 @@ fun JournalRow(
 			}) {
 				AlertDialog(
 					onDismissRequest = {
-						// Dismiss the dialog when the user clicks outside the dialog or on the back
-						// button. If you want to disable that functionality, simply use an empty
-						// onCloseRequest.
+						//Dismiss the dialog when the user clicks outside the dialog or on the back
+						//button. If you want to disable that functionality, simply use an empty
+						//onCloseRequest.
 						openDialog.value = false
 					},
 					title = {
@@ -91,9 +92,9 @@ fun JournalRow(
 						Button(
 
 							onClick = {
-								onNoteClick(journal)
+								//onNoteClick(journal)
 
-								openDialog.value = false
+								//openDialog.value = true
 							}) {
 							Text("Confirm")
 						}
@@ -114,4 +115,11 @@ fun JournalRow(
 
 	}
 
+}
+
+@Preview(showBackground = true)
+@Composable
+fun JournalRowPreview() {
+	JournalRow(
+		journal = Journal(UUID.randomUUID(), "The Stump", "43.4543, -123.4325", "BLM","none"), onNoteClick = {})
 }

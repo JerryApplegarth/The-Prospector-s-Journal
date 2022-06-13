@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.applecompose.theprospectorsjournal.R
-import com.applecompose.theprospectorsjournal.conposables.ImageCard
+import com.applecompose.theprospectorsjournal.components.ImageCard
 import com.applecompose.theprospectorsjournal.navigation.Screen
 
 @Composable
