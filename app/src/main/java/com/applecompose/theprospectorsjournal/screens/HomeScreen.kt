@@ -77,9 +77,7 @@ fun HomeScreen(navController: NavController) {
 			Spacer(modifier = Modifier.height(12.dp))
 			AppLogo()
 		}
-
 	}
-
 }
 
 @Preview(showBackground = true)
