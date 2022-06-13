@@ -48,7 +48,7 @@ fun HomeScreen(navController: NavController) {
 			Spacer(modifier = Modifier.height(12.dp))
 			Text(
 				text = "Prospector's Journal:",
-				fontSize = 24.sp,
+				fontSize = 20.sp,
 				fontWeight = FontWeight.Bold,
 				fontFamily = FontFamily.Monospace,
 				modifier = Modifier
@@ -62,7 +62,7 @@ fun HomeScreen(navController: NavController) {
 			Spacer(modifier = Modifier.height(12.dp))
 			Text(
 				text = "Gold Prices:",
-				fontSize = 24.sp,
+				fontSize = 20.sp,
 				fontWeight = FontWeight.Bold,
 				fontFamily = FontFamily.Monospace,
 				modifier = Modifier
